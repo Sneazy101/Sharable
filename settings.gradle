@@ -1,2 +1,2 @@
-rootProject.name = "Sharable_DEAD"
+rootProject.name = "Sharable"
 include ':app'

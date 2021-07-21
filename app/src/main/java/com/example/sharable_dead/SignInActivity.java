@@ -1,8 +1,5 @@
 package com.example.sharable_dead;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +7,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.sharable_dead.Models.Users;
 import com.example.sharable_dead.databinding.ActivitySignInBinding;
-import com.example.sharable_dead.databinding.ActivitySignUpBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -34,6 +33,8 @@ public class SignInActivity extends AppCompatActivity {
     FirebaseAuth auth;
     GoogleSignInClient mGoogleSignInClient;
     FirebaseDatabase database;
+    //HAHA Funny Number
+    int RC_SIGN_IN = 69;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,10 +69,10 @@ public class SignInActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 progressDialog.dismiss();
-                                if(task.isSuccessful()){
-                                    Intent intent= new Intent(SignInActivity.this, MainActivity.class);
+                                if (task.isSuccessful()) {
+                                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                     startActivity(intent);
-                                }else{
+                                } else {
                                     Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -82,7 +83,7 @@ public class SignInActivity extends AppCompatActivity {
         binding.clickSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (SignInActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
                 startActivity(intent);
             }
         });
@@ -94,14 +95,11 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        if(auth.getCurrentUser() != null){
+        if (auth.getCurrentUser() != null) {
             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
             startActivity(intent);
         }
     }
-
-    //HAHA Funny Number
-    int RC_SIGN_IN = 69;
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();

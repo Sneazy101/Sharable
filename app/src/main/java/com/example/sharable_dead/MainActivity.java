@@ -1,8 +1,5 @@
 package com.example.sharable_dead;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,8 +7,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.sharable_dead.databinding.ActivityMainBinding;
-import com.example.sharable_dead.databinding.ActivitySignInBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch(item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.settings:
                 Toast.makeText(this, "Clicked Settings", Toast.LENGTH_SHORT);
                 break;
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.logout:
                 auth.signOut();
                 Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+                startActivity(intent);
                 Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT);
                 break;
 

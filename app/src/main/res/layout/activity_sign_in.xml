@@ -25,18 +25,18 @@
             android:layout_gravity="center_horizontal"
             app:srcCompat="@drawable/smiley" />
 
-<!--        <EditText-->
-<!--            android:id="@+id/edUserName"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            android:ems="10"-->
-<!--            android:hint="user name"-->
-<!--            android:inputType="textPersonName"-->
-<!--            android:padding="9dp"-->
-<!--            android:text=""-->
-<!--            android:textColorHighlight="#000000" />-->
+        <!--        <EditText-->
+        <!--            android:id="@+id/edUserName"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="15dp"-->
+        <!--            android:layout_marginBottom="10dp"-->
+        <!--            android:ems="10"-->
+        <!--            android:hint="user name"-->
+        <!--            android:inputType="textPersonName"-->
+        <!--            android:padding="9dp"-->
+        <!--            android:text=""-->
+        <!--            android:textColorHighlight="#000000" />-->
 
         <EditText
             android:id="@+id/edEmail"
